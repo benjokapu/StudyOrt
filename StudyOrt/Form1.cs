@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace StudyOrt
 {
@@ -16,26 +17,41 @@ namespace StudyOrt
         {
             InitializeComponent();
         }
+        OleDbConnection con = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source =./mydatabase.mdb;");
+        OleDbCommand cmd;
+        OleDbDataAdapter da;
+        DataSet ds = new DataSet();
+        OleDbDataReader dr;
+
+
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if(checkBox1.Checked == true)
+            con.Open();
+            string login = "SELECT * FROM users WHERE DNI= '" + TxtBxDni.Text + "' and PASSWORD= '" + TxtBxContra.Text + "'";
+            cmd = new OleDbCommand(login, con);
+            dr = cmd.ExecuteReader();
+
+            if (dr.Read() == true)
             {
-                Form3 F3 = new Form3();
-                F3.Show();
+                Form3 f3 = new Form3();
+                f3.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show(" La contraseña es incorrecta ");
+                MessageBox.Show("Dni o Contraseña inválidos. Volvé a intentar.", "Login Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtBxDni.Text = "";
+                TxtBxContra.Text = "";
+                TxtBxDni.Focus();
+            
             }
+
+
         }
 
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void BtnCrearCuenta_Click(object sender, EventArgs e)
         {
@@ -44,14 +60,8 @@ namespace StudyOrt
             this.Hide();
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void TxtBxDni_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

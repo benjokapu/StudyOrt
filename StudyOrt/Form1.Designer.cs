@@ -45,7 +45,7 @@ namespace StudyOrt
             this.TxtBxDni.Size = new System.Drawing.Size(122, 20);
             this.TxtBxDni.TabIndex = 1;
             this.TxtBxDni.Text = "DNI";
-            this.TxtBxDni.TextChanged += new System.EventHandler(this.TxtBxDni_TextChanged);
+            
             // 
             // TxtBxContra
             // 
@@ -106,7 +106,7 @@ namespace StudyOrt
             this.Controls.Add(this.TxtBxDni);
             this.Name = "Form1";
             this.Text = "    ";
-            this.Load += new System.EventHandler(this.Form1_Load_1);
+            
             ((System.ComponentModel.ISupportInitialize)(this.ImgLogo1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
