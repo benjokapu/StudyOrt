@@ -14,7 +14,7 @@ namespace StudyOrt
 {
     public partial class Form2 : Form
     {
-        OleDbConnection con = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source =./mydatabase.mdb;");
+        OleDbConnection con = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source =./StudyOrtDB;");
         OleDbCommand cmd;
         OleDbDataAdapter da;
         DataSet ds = new DataSet();
@@ -38,9 +38,9 @@ namespace StudyOrt
                 string register = "INSERT INTO users VALUES ('" + TxtBoxDni.Text + "','" + TxtBoxContaseña.Text + "','" + TxtBoxNombre.Text + "','" + TxtBoxApellido.Text + "')";
                 cmd = new OleDbCommand(register, con);
                 cmd.ExecuteNonQuery();
+                
                 con.Close();
-
-                TxtBoxNombre.Text = "";
+                    TxtBoxNombre.Text = "";
                 TxtBoxApellido.Text = "";
                 TxtBoxDni.Text = "";
                 TxtBoxContaseña.Text = "";
@@ -78,6 +78,6 @@ namespace StudyOrt
 
         }
 
-
+       
     }
 }

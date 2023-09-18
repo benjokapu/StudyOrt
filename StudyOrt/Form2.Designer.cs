@@ -36,8 +36,12 @@ namespace StudyOrt
             this.TxtBoxContaseña = new System.Windows.Forms.TextBox();
             this.TxtBoxRepContraseña = new System.Windows.Forms.TextBox();
             this.BtnRegistrarse = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.chkBoxMostrar = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LblRegist
@@ -55,7 +59,6 @@ namespace StudyOrt
             this.TxtBoxNombre.Name = "TxtBoxNombre";
             this.TxtBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.TxtBoxNombre.TabIndex = 1;
-            this.TxtBoxNombre.Text = "Nombre";
             // 
             // TxtBoxApellido
             // 
@@ -63,7 +66,6 @@ namespace StudyOrt
             this.TxtBoxApellido.Name = "TxtBoxApellido";
             this.TxtBoxApellido.Size = new System.Drawing.Size(100, 20);
             this.TxtBoxApellido.TabIndex = 2;
-            this.TxtBoxApellido.Text = "Apellido";
             // 
             // TxtBoxDni
             // 
@@ -71,7 +73,6 @@ namespace StudyOrt
             this.TxtBoxDni.Name = "TxtBoxDni";
             this.TxtBoxDni.Size = new System.Drawing.Size(245, 20);
             this.TxtBoxDni.TabIndex = 3;
-            this.TxtBoxDni.Text = "Dni";
             // 
             // TxtBoxContaseña
             // 
@@ -80,7 +81,6 @@ namespace StudyOrt
             this.TxtBoxContaseña.PasswordChar = '•';
             this.TxtBoxContaseña.Size = new System.Drawing.Size(245, 20);
             this.TxtBoxContaseña.TabIndex = 4;
-            this.TxtBoxContaseña.Text = "Contraseña";
             // 
             // TxtBoxRepContraseña
             // 
@@ -89,7 +89,6 @@ namespace StudyOrt
             this.TxtBoxRepContraseña.PasswordChar = '•';
             this.TxtBoxRepContraseña.Size = new System.Drawing.Size(245, 20);
             this.TxtBoxRepContraseña.TabIndex = 5;
-            this.TxtBoxRepContraseña.Text = "Repetir Contraseña";
             // 
             // BtnRegistrarse
             // 
@@ -100,16 +99,6 @@ namespace StudyOrt
             this.BtnRegistrarse.Text = "Registrarse";
             this.BtnRegistrarse.UseVisualStyleBackColor = true;
             this.BtnRegistrarse.Click += new System.EventHandler(this.BtnRegistrarse_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // chkBoxMostrar
             // 
@@ -122,13 +111,62 @@ namespace StudyOrt
             this.chkBoxMostrar.UseVisualStyleBackColor = true;
             this.chkBoxMostrar.CheckedChanged += new System.EventHandler(this.chkBoxMostrar_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(61, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Nombre";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(202, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Apellido";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(61, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Dni";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(61, 182);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Contraseña";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(61, 226);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Repetir Contraseña";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.chkBoxMostrar);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.BtnRegistrarse);
             this.Controls.Add(this.TxtBoxRepContraseña);
             this.Controls.Add(this.TxtBoxContaseña);
@@ -153,7 +191,11 @@ namespace StudyOrt
         private System.Windows.Forms.TextBox TxtBoxContaseña;
         private System.Windows.Forms.TextBox TxtBoxRepContraseña;
         private System.Windows.Forms.Button BtnRegistrarse;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox chkBoxMostrar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

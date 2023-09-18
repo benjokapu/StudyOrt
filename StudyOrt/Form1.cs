@@ -17,11 +17,14 @@ namespace StudyOrt
         {
             InitializeComponent();
         }
-        OleDbConnection con = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source =./mydatabase.mdb;");
+        OleDbConnection con = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source =./StudyOrtDB.accdb;");
         OleDbCommand cmd;
         OleDbDataAdapter da;
         DataSet ds = new DataSet();
         OleDbDataReader dr;
+
+
+        
 
 
 
@@ -31,8 +34,10 @@ namespace StudyOrt
             string login = "SELECT * FROM users WHERE DNI= '" + TxtBxDni.Text + "' and PASSWORD= '" + TxtBxContra.Text + "'";
             cmd = new OleDbCommand(login, con);
             dr = cmd.ExecuteReader();
+            da = new OleDbDataAdapter(cmd);
+            da.Fill(ds, "Login");
 
-            if (dr.Read() == true)
+            if (ds.Tables["Login"].Rows.Count == 1)
             {
                 Form3 f3 = new Form3();
                 f3.Show();
@@ -46,12 +51,11 @@ namespace StudyOrt
                 TxtBxDni.Focus();
             
             }
-
-
+            con.Close();        
         }
 
 
-        
+
 
         private void BtnCrearCuenta_Click(object sender, EventArgs e)
         {
@@ -60,8 +64,16 @@ namespace StudyOrt
             this.Hide();
         }
 
-        
-
-     
+        private void chkBoxMost1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxMost1.Checked)
+            {
+                TxtBxContra.PasswordChar = '\0';
+            }
+            else
+            {
+                TxtBxContra.PasswordChar = '*';
+            }
+        }
     }
 }
