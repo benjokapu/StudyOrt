@@ -14,7 +14,10 @@ namespace StudyOrt
 {
     public partial class Form2 : Form
     {
-        OleDbConnection con = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source =./StudyOrtDB;");
+
+        public const string connString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = .\\StudyOrtDB.accdb;Persist Security Info=False;";
+
+        OleDbConnection con = new OleDbConnection(connString);
         OleDbCommand cmd;
         OleDbDataAdapter da;
         DataSet ds = new DataSet();
@@ -35,18 +38,22 @@ namespace StudyOrt
             else if (TxtBoxContaseña.Text == TxtBoxRepContraseña.Text)
             {
                 con.Open();
-                string register = "INSERT INTO users VALUES ('" + TxtBoxDni.Text + "','" + TxtBoxContaseña.Text + "','" + TxtBoxNombre.Text + "','" + TxtBoxApellido.Text + "')";
+                string register = "INSERT INTO users VALUES (" + TxtBoxDni.Text + ",'" + TxtBoxContaseña.Text + "',0,'" + TxtBoxNombre.Text + "','" + TxtBoxApellido.Text + "')";
                 cmd = new OleDbCommand(register, con);
                 cmd.ExecuteNonQuery();
-                
+
                 con.Close();
-                    TxtBoxNombre.Text = "";
+                TxtBoxNombre.Text = "";
                 TxtBoxApellido.Text = "";
                 TxtBoxDni.Text = "";
                 TxtBoxContaseña.Text = "";
                 TxtBoxRepContraseña.Text = "";
 
                 MessageBox.Show("Tu cuenta ha sido registrada", "Registración Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Form1 f1 = new Form1();
+                f1.Show();
+                this.Hide();
             }
             else
             {
@@ -78,6 +85,6 @@ namespace StudyOrt
 
         }
 
-       
+
     }
 }

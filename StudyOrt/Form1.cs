@@ -17,15 +17,11 @@ namespace StudyOrt
         {
             InitializeComponent();
         }
-        OleDbConnection con = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source =./StudyOrtDB.accdb;");
+
+        public const string connString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = .\\StudyOrtDB.accdb;Persist Security Info=False;";
+
+        OleDbConnection con = new OleDbConnection(connString);
         OleDbCommand cmd;
-        OleDbDataAdapter da;
-        DataSet ds = new DataSet();
-        OleDbDataReader dr;
-
-
-        
-
 
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -33,8 +29,8 @@ namespace StudyOrt
             con.Open();
             string login = "SELECT * FROM users WHERE DNI= '" + TxtBxDni.Text + "' and PASSWORD= '" + TxtBxContra.Text + "'";
             cmd = new OleDbCommand(login, con);
-            dr = cmd.ExecuteReader();
-            da = new OleDbDataAdapter(cmd);
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataSet ds = new DataSet();
             da.Fill(ds, "Login");
 
             if (ds.Tables["Login"].Rows.Count == 1)
@@ -49,9 +45,9 @@ namespace StudyOrt
                 TxtBxDni.Text = "";
                 TxtBxContra.Text = "";
                 TxtBxDni.Focus();
-            
+
             }
-            con.Close();        
+            con.Close();
         }
 
 
