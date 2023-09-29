@@ -42,6 +42,7 @@ namespace StudyOrt
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblRegist
@@ -156,11 +157,22 @@ namespace StudyOrt
             this.label5.TabIndex = 13;
             this.label5.Text = "Repetir Contraseña";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(60, 358);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 58);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver al Login";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -197,5 +209,6 @@ namespace StudyOrt
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

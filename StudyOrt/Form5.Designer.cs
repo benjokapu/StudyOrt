@@ -48,11 +48,11 @@ namespace StudyOrt
             this.PanelMenu.Controls.Add(this.BtnCoins);
             this.PanelMenu.Controls.Add(this.BtnSubir);
             this.PanelMenu.Controls.Add(this.BtnInicio);
-            this.PanelMenu.Enabled = false;
             this.PanelMenu.Location = new System.Drawing.Point(9, 10);
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(119, 342);
             this.PanelMenu.TabIndex = 0;
+            this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
             // 
             // BtnLogOut
             // 
@@ -98,6 +98,7 @@ namespace StudyOrt
             this.BtnSubir.TabIndex = 1;
             this.BtnSubir.Text = "Subir";
             this.BtnSubir.UseVisualStyleBackColor = true;
+            this.BtnSubir.Click += new System.EventHandler(this.BtnSubir_Click);
             // 
             // BtnInicio
             // 

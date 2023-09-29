@@ -14,6 +14,7 @@ namespace StudyOrt
     public partial class Form5 : Form
     {
         string curso;
+        
 
         public Form5(string palabra)
         {
@@ -37,6 +38,24 @@ namespace StudyOrt
         private void Form5_Load(object sender, EventArgs e)
         {
             LblAño.Text = curso;
+            
+        }
+
+        private void PanelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PanelMenu.Visible = true;
+        }
+
+        private void BtnSubir_Click(object sender, EventArgs e)
+        {
+            Form6 F6 = new Form6();
+            F6.Show();
+            this.Hide();
         }
     }
 }

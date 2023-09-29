@@ -27,6 +27,7 @@ namespace StudyOrt
             Form5 F5 = new Form5("Primero");
             F5.Show();
             this.Hide();
+
         }
 
         private void BtnSegundoAño_Click(object sender, EventArgs e)
