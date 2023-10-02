@@ -38,10 +38,28 @@ namespace StudyOrt
             else if (TxtBoxContaseña.Text == TxtBoxRepContraseña.Text)
             {
                 con.Open();
-                string register = "INSERT INTO users VALUES (" + TxtBoxDni.Text + ",'" + TxtBoxContaseña.Text + "',0,'" + TxtBoxNombre.Text + "','" + TxtBoxApellido.Text + "')";
-                cmd = new OleDbCommand(register, con);
-                cmd.ExecuteNonQuery();
 
+                string dni = "SELECT * FROM users WHERE DNI= '" + TxtBoxDni.Text + "'";
+                cmd = new OleDbCommand(dni, con);
+                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "dni");
+
+                if (ds.Tables["dni"].Rows.Count == 1)
+                {
+                    MessageBox.Show("La cuenta ya existe", "Registro fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string register = "INSERT INTO users VALUES (" + TxtBoxDni.Text + ",'" + TxtBoxContaseña.Text + "',0,'" + TxtBoxNombre.Text + "','" + TxtBoxApellido.Text + "')";
+                    cmd = new OleDbCommand(register, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Tu cuenta ha sido registrada", "Registración Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Form1 f1 = new Form1();
+                    f1.Show();
+                    this.Hide();
+                }
                 con.Close();
                 TxtBoxNombre.Text = "";
                 TxtBoxApellido.Text = "";
@@ -49,11 +67,7 @@ namespace StudyOrt
                 TxtBoxContaseña.Text = "";
                 TxtBoxRepContraseña.Text = "";
 
-                MessageBox.Show("Tu cuenta ha sido registrada", "Registración Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                Form1 f1 = new Form1();
-                f1.Show();
-                this.Hide();
+                
             }
             else
             {
@@ -65,10 +79,6 @@ namespace StudyOrt
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void chkBoxMostrar_CheckedChanged(object sender, EventArgs e)
         {
