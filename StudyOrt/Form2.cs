@@ -39,7 +39,7 @@ namespace StudyOrt
             {
                 con.Open();
 
-                string dni = "SELECT * FROM users WHERE DNI= '" + TxtBoxDni.Text + "'";
+                string dni = "SELECT * FROM users WHERE DNI = " + TxtBoxDni.Text;
                 cmd = new OleDbCommand(dni, con);
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -51,7 +51,7 @@ namespace StudyOrt
                 }
                 else
                 {
-                    string register = "INSERT INTO users VALUES (" + TxtBoxDni.Text + ",'" + TxtBoxContaseña.Text + "',0,'" + TxtBoxNombre.Text + "','" + TxtBoxApellido.Text + "')";
+                    string register = "INSERT INTO users VALUES (" + TxtBoxDni.Text + ",'" + TxtBoxContaseña.Text + "','" + TxtBoxNombre.Text + "','" + TxtBoxApellido.Text + "')";
                     cmd = new OleDbCommand(register, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Tu cuenta ha sido registrada", "Registración Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -67,7 +67,7 @@ namespace StudyOrt
                 TxtBoxContaseña.Text = "";
                 TxtBoxRepContraseña.Text = "";
 
-                
+
             }
             else
             {

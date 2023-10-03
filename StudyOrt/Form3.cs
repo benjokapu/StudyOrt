@@ -12,6 +12,8 @@ namespace StudyOrt
 {
     public partial class Form3 : Form
     {
+        public string USUARIO;
+
         public Form3()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace StudyOrt
         private void BtnPrimerAño_Click(object sender, EventArgs e)
         {
             Form5 F5 = new Form5("Primero");
+            F5.USUARIO = USUARIO;
             F5.Show();
             this.Hide();
 
@@ -33,6 +36,7 @@ namespace StudyOrt
         private void BtnSegundoAño_Click(object sender, EventArgs e)
         {
             Form5 F5 = new Form5("Segundo");
+            F5.USUARIO = USUARIO;
             F5.Show();
             this.Hide();
         }

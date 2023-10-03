@@ -27,7 +27,7 @@ namespace StudyOrt
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             con.Open();
-            string login = "SELECT * FROM users WHERE DNI= '" + TxtBxDni.Text + "' and PASSWORD= '" + TxtBxContra.Text + "'";
+            string login = "SELECT * FROM users WHERE DNI= " + TxtBxDni.Text + " and PASSWORD= '" + TxtBxContra.Text + "'";
             cmd = new OleDbCommand(login, con);
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -36,6 +36,7 @@ namespace StudyOrt
             if (ds.Tables["Login"].Rows.Count == 1)
             {
                 Form3 f3 = new Form3();
+                f3.USUARIO = TxtBxDni.Text;
                 f3.Show();
                 this.Hide();
             }

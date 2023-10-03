@@ -56,6 +56,7 @@ namespace StudyOrt
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Arte",
@@ -74,7 +75,7 @@ namespace StudyOrt
             "",
             "Lengua",
             "",
-            "Matematic",
+            "Matematica",
             "",
             "Educacion Fisica",
             "",
@@ -88,10 +89,8 @@ namespace StudyOrt
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "primero",
-            "segundo"});
             this.comboBox2.Location = new System.Drawing.Point(75, 213);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(129, 21);
@@ -159,6 +158,7 @@ namespace StudyOrt
             this.Controls.Add(this.textBox1);
             this.Name = "Form6";
             this.Text = "Form6";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
