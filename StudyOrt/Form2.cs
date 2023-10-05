@@ -19,7 +19,6 @@ namespace StudyOrt
 
         OleDbConnection con = new OleDbConnection(connString);
         OleDbCommand cmd;
-        OleDbDataAdapter da;
         DataSet ds = new DataSet();
 
         public Form2()

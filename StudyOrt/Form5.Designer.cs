@@ -62,6 +62,7 @@ namespace StudyOrt
             this.BtnLogOut.TabIndex = 5;
             this.BtnLogOut.Text = "Cerrar Cesion";
             this.BtnLogOut.UseVisualStyleBackColor = true;
+            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
             // label2
             // 
@@ -79,7 +80,6 @@ namespace StudyOrt
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre y Apellido";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BtnCoins
             // 

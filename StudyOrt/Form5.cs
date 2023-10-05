@@ -34,10 +34,7 @@ namespace StudyOrt
             curso = palabra;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void BtnInicio_Click(object sender, EventArgs e)
         {
@@ -51,17 +48,25 @@ namespace StudyOrt
         {
             LblAño.Text = curso;
 
+            if (USUARIO != null)
+            {
+                string cmdSQL = "SELECT Nombre, Apellido FROM Users WHERE DNI = " + USUARIO;
+                cmd = new OleDbCommand(cmdSQL, con);
+                da = new OleDbDataAdapter(cmd);
+                ds = new DataSet();
+                da.Fill(ds, "User");
+                string nombre = ds.Tables["User"].Rows[0][0].ToString();
+                string apellido = ds.Tables["User"].Rows[0][1].ToString();
 
-            string cmdSQL = "SELECT Nombre, Apellido FROM Users WHERE DNI = " + USUARIO;
-            cmd = new OleDbCommand(cmdSQL, con);
-            da = new OleDbDataAdapter(cmd);
-            ds = new DataSet();
-            da.Fill(ds, "User");
+                label1.Text = nombre + " " + apellido;
+            }
+            else
+            {
+                label1.Text = "Usuario Deesconocido";
+            }
+            
 
-            string nombre = ds.Tables["User"].Rows[0][0].ToString();
-            string apellido = ds.Tables["User"].Rows[0][1].ToString();
-
-            label1.Text = nombre + " " + apellido;
+            
 
         }
 
@@ -80,6 +85,15 @@ namespace StudyOrt
             Form6 F6 = new Form6();
             F6.USUARIO = USUARIO;
             F6.Show();
+            this.Hide();
+        }
+
+        private void BtnLogOut_Click(object sender, EventArgs e)
+        {
+            label1.Text = "";
+            USUARIO = string.Empty;
+            Form1 F1 = new Form1();
+            F1.Show();
             this.Hide();
         }
     }

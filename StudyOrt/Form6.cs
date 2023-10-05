@@ -43,9 +43,9 @@ namespace StudyOrt
 
 
                 con.Open();
+
                 string subirsql = "INSERT INTO files (Nombre, ACLARACIONES, FECHA, URL, DNI, [Year], Subject) VALUES (\"{0}\",\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\",\"{6}\")";
                 string subir = string.Format(subirsql, textBox1.Text, textBox2.Text, fechaActual, string.Empty, USUARIO, comboBox2.Text, comboBox1.Text);
-
                 cmd = new OleDbCommand(subir, con);
                 cmd.ExecuteNonQuery();
 
@@ -99,6 +99,13 @@ namespace StudyOrt
 
 
 
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Form5 F5 = new Form5("");
+            F5.Show();
+            this.Hide(); 
         }
     }
 }

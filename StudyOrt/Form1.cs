@@ -19,7 +19,6 @@ namespace StudyOrt
         }
 
         public const string connString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = .\\StudyOrtDB.accdb;Persist Security Info=False;";
-
         OleDbConnection con = new OleDbConnection(connString);
         OleDbCommand cmd;
 
