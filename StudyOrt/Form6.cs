@@ -24,7 +24,7 @@ namespace StudyOrt
         OleDbCommand cmd;
         OleDbDataAdapter da;
         DataSet ds;
-
+        
         public Form6()
         {
             InitializeComponent();
@@ -104,6 +104,7 @@ namespace StudyOrt
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Form5 F5 = new Form5("");
+            F5.USUARIO = USUARIO;
             F5.Show();
             this.Hide(); 
         }
