@@ -96,5 +96,12 @@ namespace StudyOrt
             F1.Show();
             this.Hide();
         }
+
+        private void BtnPerfil_Click(object sender, EventArgs e)
+        {
+            Form4 F4 = new Form4();
+            F4.Show();
+            this.Hide();
+        }
     }
 }

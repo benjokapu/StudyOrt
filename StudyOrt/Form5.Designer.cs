@@ -33,7 +33,7 @@ namespace StudyOrt
             this.BtnLogOut = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnCoins = new System.Windows.Forms.Button();
+            this.BtnPerfil = new System.Windows.Forms.Button();
             this.BtnSubir = new System.Windows.Forms.Button();
             this.BtnInicio = new System.Windows.Forms.Button();
             this.LblAño = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@ namespace StudyOrt
             this.PanelMenu.Controls.Add(this.BtnLogOut);
             this.PanelMenu.Controls.Add(this.label2);
             this.PanelMenu.Controls.Add(this.label1);
-            this.PanelMenu.Controls.Add(this.BtnCoins);
+            this.PanelMenu.Controls.Add(this.BtnPerfil);
             this.PanelMenu.Controls.Add(this.BtnSubir);
             this.PanelMenu.Controls.Add(this.BtnInicio);
             this.PanelMenu.Location = new System.Drawing.Point(9, 10);
@@ -81,14 +81,15 @@ namespace StudyOrt
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre y Apellido";
             // 
-            // BtnCoins
+            // BtnPerfil
             // 
-            this.BtnCoins.Location = new System.Drawing.Point(17, 209);
-            this.BtnCoins.Name = "BtnCoins";
-            this.BtnCoins.Size = new System.Drawing.Size(75, 23);
-            this.BtnCoins.TabIndex = 2;
-            this.BtnCoins.Text = "StudyCoins";
-            this.BtnCoins.UseVisualStyleBackColor = true;
+            this.BtnPerfil.Location = new System.Drawing.Point(17, 209);
+            this.BtnPerfil.Name = "BtnPerfil";
+            this.BtnPerfil.Size = new System.Drawing.Size(75, 23);
+            this.BtnPerfil.TabIndex = 2;
+            this.BtnPerfil.Text = "Perfil";
+            this.BtnPerfil.UseVisualStyleBackColor = true;
+            this.BtnPerfil.Click += new System.EventHandler(this.BtnPerfil_Click);
             // 
             // BtnSubir
             // 
@@ -127,7 +128,7 @@ namespace StudyOrt
             this.Controls.Add(this.LblAño);
             this.Controls.Add(this.PanelMenu);
             this.Name = "Form5";
-            this.Text = "Form5";
+            this.Text = "INICIO";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.PanelMenu.ResumeLayout(false);
             this.PanelMenu.PerformLayout();
@@ -140,7 +141,7 @@ namespace StudyOrt
 
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnCoins;
+        private System.Windows.Forms.Button BtnPerfil;
         private System.Windows.Forms.Button BtnSubir;
         private System.Windows.Forms.Button BtnInicio;
         private System.Windows.Forms.Button BtnLogOut;
