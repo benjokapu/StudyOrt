@@ -100,6 +100,7 @@ namespace StudyOrt
         private void BtnPerfil_Click(object sender, EventArgs e)
         {
             Form4 F4 = new Form4();
+            F4.USUARIO = USUARIO;
             F4.Show();
             this.Hide();
         }

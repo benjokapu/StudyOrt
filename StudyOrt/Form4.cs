@@ -31,8 +31,11 @@ namespace StudyOrt
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            Form5 F5 = new Form5("");
+            F5.USUARIO = USUARIO;
             nameSurname.Text = "";
             dni.Text = "";
+            dni.Text = USUARIO;
 
 
             if (USUARIO != null)
@@ -46,7 +49,7 @@ namespace StudyOrt
                 string apellido = ds.Tables["User"].Rows[0][1].ToString();
 
                 nameSurname.Text = nombre + " " + apellido;
-                dni.Text = USUARIO;
+                
             }
             else
             {
